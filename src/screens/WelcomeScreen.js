@@ -1,33 +1,41 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { NavigationContainer, navigation } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-export default function App() {
+const Stack = createStackNavigator();
+
+export default function WelcomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      
       {/* Imagem */}
-      <Image 
-        source={require('./assets/casual_dog.png')} 
+      <Image
+        source={require("../../assets/casual_dog.png")}
         style={styles.image}
         resizeMode="contain"
       />
 
       {/* Título */}
       <Text style={styles.title}>Ótimo dia!</Text>
-      <Text style={styles.subtitle}>Como deseja acessar?</Text>
+      <Text style={styles.subtitle}>Como deseja nigga acessar?</Text>
 
-{/* Botão Google */}
-<TouchableOpacity style={styles.googleButton}>
-  <Image 
-    source={require('./assets/Google.png')} // coloque o ícone do Google na pasta assets
-    style={styles.googleIcon}
-  />
-  <Text style={styles.googleButtonText}>Como deseja acessar?</Text>
-</TouchableOpacity>
-
+      {/* Botão Google */}
+      <TouchableOpacity
+        style={styles.googleButton}
+        onPress={() => navigation.navigate("Login")} // <-- aqui funciona
+      >
+        <Image
+          source={require("../../assets/Google.png")}
+          style={styles.googleIcon}
+        />
+        <Text style={styles.googleButtonText}>Entrar com Google</Text>
+      </TouchableOpacity>
 
       {/* Botão Outras opções */}
-      <TouchableOpacity style={styles.outrosButton}>
+      <TouchableOpacity
+        style={styles.outrosButton}
+        onPress={() => navigation.navigate("Register")} // <-- outro exemplo
+      >
         <Text style={styles.outrosButtonText}>Outras opções</Text>
       </TouchableOpacity>
     </View>
