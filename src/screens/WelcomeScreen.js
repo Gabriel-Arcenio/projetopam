@@ -8,21 +8,19 @@ const Stack = createStackNavigator();
 export default function WelcomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      {/* Imagem */}
+      
       <Image
         source={require("../../assets/casual_dog.png")}
         style={styles.image}
         resizeMode="contain"
       />
-
-      {/* Título */}
       <Text style={styles.title}>Ótimo dia!</Text>
-      <Text style={styles.subtitle}>Como deseja nigga acessar?</Text>
+      <Text style={styles.subtitle}>Como deseja acessar?</Text>
 
-      {/* Botão Google */}
+    
       <TouchableOpacity
         style={styles.googleButton}
-        onPress={() => navigation.navigate("Login")} // <-- aqui funciona
+        onPress={() => navigation.navigate("Login")} 
       >
         <Image
           source={require("../../assets/Google.png")}
@@ -31,10 +29,10 @@ export default function WelcomeScreen({navigation}) {
         <Text style={styles.googleButtonText}>Entrar com Google</Text>
       </TouchableOpacity>
 
-      {/* Botão Outras opções */}
+      
       <TouchableOpacity
         style={styles.outrosButton}
-        onPress={() => navigation.navigate("Register")} // <-- outro exemplo
+        onPress={() => navigation.navigate("Register")} 
       >
         <Text style={styles.outrosButtonText}>Outras opções</Text>
       </TouchableOpacity>
